@@ -66,3 +66,51 @@ fake가 많아지면 복잡해지고 유지보수하기 어려워진다. Test에
 **avoid fakes when you can**
 
 # Episode 23. Mocking Part 2
+
+## Behavior vs State
+
+![image](cc-23-part2-fig-01.png)
+
+32bit x 32bit에 대한 테스트를 어떻게 추가할 것인가 ? 64bit의 조합을 다 조사해야 하는가 ? 엄청난 시간이 소요될 것이다.
+
+**spy on the algorithm**
+
+3 x 4 = 12에 대해서 3+3+3+3=12로 계산되므로 add가 3을 인자로 4번 호출되었는지를 확인하면 된다.
+
+![image](cc-23-part2-fig-02.png)
+
+---
+
+![image](cc-23-part2-fig-03.png)
+
+---
+
+![image](cc-23-part2-fig-04.png)
+
+---
+
+![image](cc-23-part2-fig-05.png)
+
+---
+
+mock 기반 테스트는 DIP 적용되었을 때 적합. 하지만 Test가 구현에 종속된다는 문제가 발생.
+
+따라서 적합한 방법을 택해야한다.
+
+## Mocking Pattern
+
+### Test Specific Subclass
+
+![image](cc-23-part2-fig-06.png)
+
+![image](cc-23-part2-fig-07.png)
+
+subclass & override와 유사한 개념인듯
+
+### Self Shunt
+
+![image](cc-23-part2-fig-08.png)
+
+### Humble Object
+
+21:08
